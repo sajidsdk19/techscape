@@ -72,9 +72,15 @@ router.post('/signup', upload.single('profileimg'), function (req, res, next) {
   var errors = req.validationErrors();
 
   if (errors) {
-    // res.render('signup', {
-    //   errors: errors
-    // });
+    var validationMessages = ''
+    for (var key in errors) {
+      validationMessages = validationMessages + errors[key].msg + '\n';
+    }
+    res.render("error", {
+      message: "Implement appropiate handler here",
+      validations: validationMessages
+    });
+    // res.send('There have been validation errors: ', 400);
     console.log("Errors");
   } else {
     console.log("success");

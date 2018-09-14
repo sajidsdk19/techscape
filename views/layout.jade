@@ -1,0 +1,614 @@
+doctype html
+
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    title=title
+    // Google font
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round', rel='stylesheet')
+    // Bootstrap
+    link(type='text/css', rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    // Owl Carousel
+    link(type='text/css', rel='stylesheet', href='/stylesheets/owl.carousel.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/owl.theme.default.css')
+    // Magnific Popup
+    link(type='text/css', rel='stylesheet', href='/stylesheets/magnific-popup.css')
+    // Font  Icon
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    // Header
+    header#home
+      // Background Image
+      .bg-img(style="background-image: url('/images/background1.jpg');")
+        .overlay
+      // /Background Image
+      // Nav
+      nav#nav.navbar.nav-transparent
+        .container
+          .navbar-header
+            // Logo
+            .navbar-brand
+              a(href='index.html')
+                img.logo(src='/images/logo.png', alt='logo')
+                img.logo-alt(src='/images/logo-alt.png', alt='logo')
+            // /Logo
+            // Collapse nav button
+            .nav-collapse
+              span
+            // /Collapse nav button
+          // Main navigation
+          ul.main-nav.nav.navbar-nav.navbar-right
+            li
+              a(href='#home') Home
+            li
+            
+              a(href='#about') About
+            li
+              a(href='#portfolio') Portfolio
+            li
+              a(href='#service') Services
+            li
+              a(href='#pricing') Prices
+            li
+              a(href='#team') Team
+            li
+              a(href='#contact') Contact
+            li
+              a(href='/users/login') Login
+            li
+              a(href='/users/signup') Signup
+          // /Main navigation
+      // /Nav
+      // home wrapper
+      .home-wrapper
+        .container
+          .row
+            // home content
+            .col-md-10.col-md-offset-1
+              .home-content
+                h1.white-text Kids can Code
+                p.white-text
+                  | TechScape has handful of Inspiring and professional minds motivated to provide an engaging programming curriculum and Techfair for the students. Our programming school empowers students to become makers and by evaluating their innovative projects in Techfair, we create new ideas
+                button.white-btn(onclick="location.href = 'https://docs.google.com/forms/d/1jS2TlsYLzwdpHoPjUnXjuQQIagRpeD0l6_kHhH8LgDA/viewform?edit_requested=true'", ;='') Fill Feedback!
+                // <button class="main-btn">Register Here</button>
+            // /home content
+      // /home wrapper
+    // /Header
+    // About
+    
+    block content
+    #about.section.md-padding
+      // Container
+      .container
+
+
+
+        // Row
+        .row
+          // Section header
+          .section-header.text-center
+            h2.title Who we are?
+          // /Section header
+          // about
+          .col-md-4
+            .about
+              i.fa.fa-users
+              h3 About us
+              p
+                | TechScape has handful of Inspiring and professional minds motivated to provide an engaging programming curriculum and Techfair for the students.
+              // <a href="#">Read more</a>
+          // /about
+          // about
+          .col-md-4
+            .about
+              i.fa.fa-magic
+              h3 Mission
+              p
+                | To have our programming schools in every district of GB and bring the talent of GB up to the surface of Pakistan and the world.
+              // <a href="#">Read more</a>
+          // /about
+          // about
+          .col-md-4
+            .about
+              i.fa.fa-mobile
+              h3 Vision
+              p
+                | To widespread technology and programming education in the students of GB and bring their talent up to the service of community.
+              // <a href="#">Read more</a>
+          // /about
+        // /Row
+      // /Container
+    // /About
+    // Portfolio
+    #portfolio.section.md-padding.bg-grey
+      // Container
+      .container
+        // Row
+        .row
+          // Section header
+          .section-header.text-center
+            h2.title Featured Works
+          // /Section header
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work1.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work1.jpg')
+                  i.fa.fa-search
+          // /Work
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work2.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work2.jpg')
+                  i.fa.fa-search
+          // /Work
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work3.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work3.jpg')
+                  i.fa.fa-search
+          // /Work
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work4.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work4.jpg')
+                  i.fa.fa-search
+          // /Work
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work5.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work5.jpg')
+                  i.fa.fa-search
+          // /Work
+          // Work
+          .col-md-4.col-xs-6.work
+            img.img-responsive(src='/images/work6.jpg', alt='')
+            .overlay
+            .work-content
+              span Category
+              h3 Lorem ipsum dolor
+              .work-link
+                a(href='#')
+                  i.fa.fa-external-link
+                a.lightbox(href='/images/work6.jpg')
+                  i.fa.fa-search
+          // /Work
+        // /Row
+      // /Container
+    // /Portfolio
+    // Service
+    #service.section.md-padding
+      // Container
+      .container
+        // Row
+        .row
+          // Section header
+          .section-header.text-center
+            h2.title What we offer
+          // /Section header
+          // service
+          .col-md-4.col-sm-6
+            .service
+              i.fa.fa-code
+              h3 Programming School
+              p
+                | Training in Web and Graphic Designing, introduction to Programming languages using our portal and other resources and basic knowledge of gadgets, their properties and usage.Highly qualified Mentors and trainers.
+          // /service
+          // service
+          .col-md-4.col-sm-6
+            .service
+              // <i class="fa fa-lightbulb"></i>
+              //
+                <h3>Design</h3>
+                <p></p>
+          .col-md-4.col-sm-6
+            .service
+              i.fa.fa-lightbulb
+              h3 TechFair
+              p
+                | One-to-one mentorship and training for respective projects.Technology based competitions and Intra-district and Intra-city technology-based competitions.
+          // /service
+        // /Row
+      // /Container
+    // /Service
+    // Why Choose Us
+    #features.section.md-padding.bg-grey
+      // Container
+      .container
+        // Row
+        .row
+          // why choose us content
+          .col-md-6
+            .section-header
+              h2.title Why Choose Us
+            p We are Special.. Yes we are!!
+            .feature
+              i.fa.fa-check
+              p First programming school in Gilgit Biltistan.
+            .feature
+              i.fa.fa-check
+              p Accessibility of internet 3g and 4g.
+            .feature
+              i.fa.fa-check
+              p Opportunities for students to acquire programming skills.
+            .feature
+              i.fa.fa-check
+              p TechFair up to National level.
+          // /why choose us content
+          // About slider
+          .col-md-6
+            #about-slider.owl-carousel.owl-theme
+              img.img-responsive(src='/images/about1.jpg', alt='')
+              img.img-responsive(src='/images/about2.jpg', alt='')
+              img.img-responsive(src='/images/about1.jpg', alt='')
+              img.img-responsive(src='/images/about2.jpg', alt='')
+          // /About slider
+        // /Row
+      // /Container
+    // /Why Choose Us
+    // Numbers
+    #numbers.section.sm-padding
+      // Background Image
+      .bg-img(style="background-image: url('/images/background2.jpg');")
+        .overlay
+      // /Background Image
+      // Container
+      .container
+        // Row
+        .row
+          // number
+          .col-sm-3.col-xs-6
+            .number
+              i.fa.fa-users
+              h3.white-text
+                span.counter 70
+              span.white-text Happy clients
+          // /number
+          // number
+          .col-sm-3.col-xs-6
+            .number
+              i.fa.fa-trophy
+              h3.white-text
+                span.counter 3
+              span.white-text Awards won
+          // /number
+          // number
+          .col-sm-3.col-xs-6
+            .number
+              i.fa.fa-coffee
+              h3.white-text
+                span.counter 3
+              span.white-text Sponsorships
+          // /number
+          // number
+          .col-sm-3.col-xs-6
+            .number
+              i.fa.fa-file
+              h3.white-text
+                span.counter 15
+              span.white-text Successful Sessions
+          // /number
+        // /Row
+      // /Container
+    // /Numbers
+    // Pricing
+    #pricing.section.md-padding
+      // Container
+      .container
+        // Row
+        .row
+          // Section header
+          .section-header.text-center
+            h2.title Our Curriculum
+          // /Section header
+          // pricing
+          .col-sm-4
+            .pricing
+              .price-head
+                span.price-title Beginner
+                .price
+                  h3
+                    | Pkr 5000
+                    span.duration / month
+              ul.price-content
+                li
+                  p 13 Coding Courses
+                li
+                  p 12 STEM Courses
+                li
+                  p Learn bots
+              .price-btn
+                //
+                  <button class="outline-btn">Purchase now</button>
+          // /pricing
+          // pricing
+          .col-sm-4
+            .pricing
+              .price-head
+                span.price-title Intermediate
+                .price
+                  h3
+                    | Pkr 6000
+                    span.duration / month
+              ul.price-content
+                li
+                  p Backend Courses
+                li
+                  p UI/UX Designing
+                li
+                  p Student Portal
+                //
+                  <li>
+                  <p>24/24 Support</p>
+                  </li>
+              .price-btn
+                //
+                  <button class="outline-btn">Purchase now</button>
+          // /pricing
+          // pricing
+          .col-sm-4
+            .pricing
+              .price-head
+                span.price-title Expert
+                .price
+                  h3
+                    | Pkr 7000
+                    span.duration / month
+              ul.price-content
+                li
+                  p TechFair
+                li
+                  p Mentorship
+                li
+                  p Working Space
+              .price-btn
+                // <button class="outline-btn">Purchase now</button>
+          // /pricing
+        // Row
+      // /Container
+    // /Pricing
+    // Testimonial
+    #testimonial.section.md-padding
+      // Background Image
+      .bg-img(style="background-image: url('./img/background3.jpg');")
+        .overlay
+      // /Background Image
+      // Container
+      .container
+        .section-header.text-center
+          h2.title(style='color:white') Our Advisors
+        // Row
+        .row
+          // Testimonial slider
+          .col-md-10.col-md-offset-1
+            #testimonial-slider.owl-carousel.owl-theme
+              // testimonial
+              .testimonial
+                .testimonial-meta
+                  img(src='/images/perso1.jpg', alt='')
+                  h3.white-text Naveed Tejani
+                  span External Advisor
+                p.white-text
+                  | IT Professional having 6 years of experience with major expertise in .Net platform, Payment Systems Development and Business Process Engineering.
+              // /testimonial
+              // testimonial
+              .testimonial
+                .testimonial-meta
+                  img(src='/images//perso2.jpg', alt='')
+                  h3.white-text Muhammad Bin Masood
+                  span Advisor NIC
+                p.white-text
+                  | Muhammad Bin Masood is an entrepreneur and a marketing and operations specialist.He is a graduate of Bahria University Islamabad with a specialization in Advertising and Branding
+              // /testimonial
+          // /Testimonial slider
+        // /Row
+      // /Container
+    // /Testimonial
+    // Team
+    #team.section.md-padding
+      // Container
+      .container
+        // Row
+        .row
+          // Section header
+          .section-header.text-center
+            h2.title Our Team
+          // /Section header
+          // team
+          .col-sm-4
+            .team
+              .team-img
+                img.img-responsive(src='/images/team1.jpg', alt='')
+                .overlay
+                  .team-social
+                    a(href='https://www.facebook.com/profile.php?id=100009658325026')
+                      i.fab.fa-facebook
+                    a(href='#')
+                      i.fa.fa-google-plus
+                    a(href='#')
+                      i.fa.fa-twitter
+              .team-content
+                h3 Zulfiqar Essa
+                span CDO
+          // /team
+          // team
+          .col-sm-4
+            .team
+              .team-img
+                img.img-responsive(src='/images/team2.jpg', alt='')
+                .overlay
+                  .team-social
+                    a(href='https://www.facebook.com/Aneez.Amin')
+                      i.fa.fa-facebook
+                    a(href='#')
+                      i.fa.fa-google-plus
+                    a(href='#')
+                      i.fa.fa-twitter
+              .team-content
+                h3 Anees Amin
+                span CEO
+          // /team
+          // team
+          .col-sm-4
+            .team
+              .team-img
+                img.img-responsive(src='/images/team3.jpg', alt='')
+                .overlay
+                  .team-social
+                    a(href='https://www.facebook.com/sdk19khan')
+                      i.fa.fa-facebook
+                    a(href='https://plus.google.com/u/1/116046100797003323563')
+                      i.fa.fa-google-plus
+                    a(href='https://twitter.com/sajid_19khan')
+                      i.fa.fa-twitter
+              .team-content
+                h3 Sajid Khan
+                span CTO
+          // /team
+        // /Row
+      // /Container
+    // /Team
+    // Blog
+    // there was a blog here
+    // Contact
+    #contact.section.md-padding
+      // Container
+      .container
+        // Row
+        .row
+          // Section-header
+          .section-header.text-center
+            h2.title Get in touch
+          // /Section-header
+          // contact
+          .col-sm-4
+            .contact
+              i.fa.fa-phone
+              h3 Phone
+              p +92-340-5596998
+          // /contact
+          // contact
+          .col-sm-4
+            .contact
+              i.fa.fa-envelope
+              h3 Email
+              p sajid_19khan@yahoo.com
+          // /contact
+          // contact
+          .col-sm-4
+            .contact
+              i.fa.fa-map-marker
+              h3 Address
+              p National Incubation Center Plot 24-b, H-9/1, Street 6, Islamabad, Pakistan-44000
+          // /contact
+          // contact form
+          .col-md-8.col-md-offset-2
+            form.contact-form(action='MAILTO:sajid_19khan@yahoo.com', method='post', enctype='text/plan')
+              input.input(type='text', placeholder='Name')
+              input.input(type='email', placeholder='Email')
+              input.input(type='text', placeholder='Subject')
+              textarea.input(placeholder='Message')
+              button.main-btn Send message
+          // /contact form
+        // /Row
+      // /Container
+    // /Contact
+    // Footer
+    footer#footer.sm-padding.bg-dark
+      // Container
+      .container
+        // Row
+        .row
+          .col-md-12
+            // footer logo
+            .footer-logo
+              a(href='index.html')
+                img(src='/images/logo-alt.png', alt='logo')
+            // /footer logo
+            // footer follow
+            ul.footer-follow
+              li
+                a(href='https://www.facebook.com/techscapeofficial/')
+                  i.fa.fa-facebook
+              li
+                a(href='https://twitter.com/tech_scape')
+                  i.fa.fa-twitter
+              li
+                a(href='https://plus.google.com/103161444940230951389')
+                  i.fa.fa-google-plus
+              li
+                a(href='#')
+                  i.fa.fa-instagram
+              li
+                a(href='#')
+                  i.fa.fa-linkedin
+              li
+                a(href='https://www.youtube.com/channel/UCzG-OIlOCFxLyLQtpyK1ayg')
+                  i.fa.fa-youtube
+            // /footer follow
+            // footer copyright
+            .footer-copyright
+            // /footer copyright
+        // /Row
+      // /Container
+    // /Footer
+    // Back to top
+    #back-to-top
+    // /Back to top
+    // Preloader
+    #preloader
+      .preloader
+        span
+        span
+        span
+        span
+    // /Preloader
+    // jQuery Plugins
+
+    block content
+
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/owl.carousel.min.js')
+    script(type='text/javascript', src='/js/jquery.magnific-popup.js')
+    script(type='text/javascript', src='/js/main.js')
+    

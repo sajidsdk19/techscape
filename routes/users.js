@@ -64,9 +64,9 @@ router.post('/signup', upload.single('profileimg'), function (req, res, next) {
 
   //Validators
   req.checkBody("username", "User Name is Required").notEmpty();
-  // req.checkBody('email', 'Email is not valid').isEmail();
-  // req.checkBody('password', 'Password field is required').notEmpty();
-  // req.checkBody('password2', 'Password do not match').equals(req.password);
+  req.checkBody('email', 'Email is not valid').isEmail();
+  req.checkBody('password', 'Password field is required').notEmpty();
+  req.checkBody('password2', 'Password do not match').equals(req.body.password);
 
 
   var errors = req.validationErrors();

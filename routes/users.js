@@ -1,25 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var expressValidator=require('express-validator');
+var expressValidator = require('express-validator');
 
 router.use(expressValidator());
-var multer=require('multer');
-var upload=multer({dest:'./uploads'});
+var multer = require('multer');
+var upload = multer({
+  dest: './uploads'
+});
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
   res.render('login');
 });
 
-router.get('/signup', function(req, res, next) {
+router.get('/signup', function (req, res, next) {
   res.render('signup');
 });
 
-router.post('/signup',upload.single('profileimg'), function(req, res, next) {
+router.post('/signup', upload.single('profileimg'), function (req, res, next) {
   console.log(req.body.username);
   console.log(req.body.email);
   console.log(req.body.password);
@@ -31,21 +33,23 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
   // var pass2=req.body.password2;
   // //var file=req.file;
 
-  if(req.file){
+  if (req.file) {
     console.log("uploading file ");
-    var image=req.file.filename;
-  }else{
+    var image = req.file.filename;
+  } else {
     console.log("NO files uploaded ");
   }
 
-  router.get('/check', function(req, res, next) {
+  router.get('/check', function (req, res, next) {
     res.render('check');
   });
 
-  router.post('/check', function(req, res, next) {
+  router.post('/check', function (req, res, next) {
     req.check('email', 'Invalid email address').isEmail();
-    req.check('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
-  
+    req.check('password', 'Password is invalid').isLength({
+      min: 4
+    }).equals(req.body.confirmPassword);
+
     var errors = req.validationErrors();
     if (errors) {
       req.session.errors = errors;
@@ -55,35 +59,34 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
     }
     res.redirect('/');
   });
-  
+
 
 
   //Validators
-  expressValidator.req.checkBody("username","User Name is Required").notEmpty();
+  req.checkBody("username", "User Name is Required").notEmpty();
   // req.checkBody('email','Email is not valid').isEmail();
   // expressValidator.req.checkBody('password','Password field is required').notEmpty();
   // req.checkBody('password2','Password do not match').equals(req.password);
 
 
-var errors =req.validationErrors();
+  var errors = req.validationErrors();
 
-if(errors)
-{
-  res.render('register',{
-    errors: errors
-  });
-//console.log("Errors");
-}else{
-  console.log("success");
-}
+  if (errors) {
+    res.render('register', {
+      errors: errors
+    });
+    //console.log("Errors");
+  } else {
+    console.log("success");
+  }
 });
 
-router.post('/login', function(req, res, next) {
+router.post('/login', function (req, res, next) {
 
-  var username=req.body.username;
-  var password=req.body.pass;
-   console.log(req.body.username);
-   console.log(req.body.pass);
+  var username = req.body.username;
+  var password = req.body.pass;
+  console.log(req.body.username);
+  console.log(req.body.pass);
 
 
   //  expressValidator.req.checkBody("username","User Name is Required").notEmpty();
@@ -98,7 +101,7 @@ router.post('/login', function(req, res, next) {
   //  }else{
   //    console.log("success");
   //  }
-   
+
 });
 
 

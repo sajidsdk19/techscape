@@ -1,0 +1,37 @@
+extends layout
+
+block content
+        html(lang='en')
+        head
+          title Signup 
+          meta(name='viewport', content='width=device-width, initial-scale=1')
+          link(rel='stylesheet', type='text/css', href='/css/signup.css')
+          .container-login100(style="background-image: url('/images/bg-01.jpg');")
+        Body     
+          #login-box
+            .left
+              h1 Sign up
+              form(method='post',action='/users/signup',enctype='multipart/form-data')
+                //- .form-group
+                //- input.form-control(type='text', name='name', placeholder='Your Name')
+                .form-group
+                input.form-control(type='text', name='username', placeholder='Username')
+                .form-group
+                input.form-control(type='text', name='email', placeholder='E-mail')
+                .form-group
+                input.form-control(type='password', name='password', placeholder='Password')
+                .form-group
+                input.form-control(type='password', name='password2', placeholder='Retype password')
+                .form-group
+                input.form-control(type="file",name='profileimg',placeholder='upload your Image')      
+                input.btn(type='submit',name='signup_submit', value='Sign me up')
+
+            .right
+              span.loginwith
+                | Sign in with
+                br
+                | social network
+              button.social-signin.facebook Log in with facebook
+              //- button.social-signin.twitter Log in with Twitter
+              //- button.social-signin.google Log in with Google+
+            .or OR

@@ -264,8 +264,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     padding: 0;
 }
 
+.signin{
+
+    color: rgb(62, 236, 114);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .navbar-brand .logo, .navbar-brand .logo-alt {
-    max-height: 50px;
+    max-height: 44px;
     display: block;
 }
 
@@ -334,6 +340,21 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         -webkit-transition: 0.2s color;
         transition: 0.2s color;
     }
+
+    .mybutton {
+        font-size: 14px;
+        -webkit-transition: 0.2s color;
+        transition: 0.2s color;
+        color: rgb(21, 157, 248);
+        font-weight: bold;
+        padding: 15px 0px;
+    }
+
+    .main-nav>li>mybutton {
+        color: #10161A;
+        padding: 15px 0px;
+    }
+
     .main-nav>li>a {
         color: #10161A;
         padding: 15px 0px;

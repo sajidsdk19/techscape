@@ -8,11 +8,11 @@ var userschema=mongoose.Schema({
     
     username:{
         type:String,
-        createIndexes:true,
+        //createIndexes:true,
     },
-    // name:{
-    //     type:String
-    // },
+    name:{
+        type:String
+    },
     password:{
         type:String
     },

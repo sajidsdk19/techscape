@@ -1,5 +1,6 @@
 extends layout
 
+
 block content
         html(lang='en')
         head
@@ -12,8 +13,8 @@ block content
             .left
               h1 Sign up
               form(method='post',action='/users/signup',enctype='multipart/form-data')
-                //- .form-group
-                //- input.form-control(type='text', name='name', placeholder='Your Name')
+                .form-group
+                input.form-control(type='text', name='name', placeholder='Your Name')
                 .form-group
                 input.form-control(type='text', name='username', placeholder='Username')
                 .form-group
@@ -35,3 +36,5 @@ block content
               //- button.social-signin.twitter Log in with Twitter
               //- button.social-signin.google Log in with Google+
             .or OR
+
+

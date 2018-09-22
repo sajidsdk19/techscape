@@ -33,17 +33,21 @@ router.get('/register', function(req, res, next) {
 
 
 router.post('/signup',upload.single('profileimg'), function(req, res, next) {
+ //res.redirect('/signup');
   console.log(req.body.username);
-  //console.log(req.body.name);
+  console.log(req.body.name);
   console.log(req.body.email);
   console.log(req.body.password);
   console.log(req.body.password2);
   console.log(req.file);
-  // var username=req.body.username;
-  // var email=req.body.email;
-  // var pass=req.body.password;
-  // var pass2=req.body.password2;
-  // //var file=req.file;
+
+
+  var name=req.body.name;
+  var username=req.body.username;
+  var email=req.body.email;
+  var pass=req.body.password;
+  var pass2=req.body.password2;
+  var file=req.file;
 
   if (req.file) {
     console.log("uploading file ");
@@ -53,7 +57,7 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
   }
 
   //Validators
- // req.checkBody('name','name is Required').notEmpty();
+  req.checkBody('name','Name is Required').notEmpty();
   req.checkBody('username', 'User Name is Required').notEmpty();
   req.checkBody('email', 'Email is not valid').isEmail();
   req.checkBody('password', 'Password field is required').notEmpty();
@@ -75,24 +79,32 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
   } else {
     console.log("success");
 
+    
   //Saving Users in database s=================
   var newUser= new Users({
-    //name:name,
     username:username,
+    name:name,
     email:email,
     password:pass,
     profileImage:image
    });
  
    Users.createuser(newUser,function(err,user){
-     if(err) throw err;
+     if(err) {
+       console.log("Error Occured"+err);
+     }//throw err;
      console.log(user)
+     console.log("saved in db");
+
   
    });
  
    res.location('/');
    res.redirect('/');
+  
+
   }
+
 
  
 

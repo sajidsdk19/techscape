@@ -4,10 +4,15 @@ var expressValidator=require('express-validator');
 var passport=require('passport');
 var LocalStratgegy=require('passport-local').Strategy
 router.use(expressValidator());
+
 var multer=require('multer');
 var upload=multer({dest:'./uploads'});
 var Users=require('../model/users');
 var flash=require('connect-flash');
+
+
+router.use(flash());
+
 
 
 /* GET users listing. */

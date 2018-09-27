@@ -3,17 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
 var passport=require('passport');
+var LocalStratgegy=require('passport-local').Strategy
 var mongo=require('mongodb');
 var mongoose=require('mongoose');
 var multer=require('multer');
 var upload=multer({dest:'./uploads'});
-
+var bcrypt=require('bcryptjs');
 var expres=require('express-messages');
 var expressValidator=require('express-validator');
 var session=require('express-session');
+var flash=require('connect-flash');
 
 
 

@@ -150,6 +150,7 @@ function(req, res) {
         if(err) return done(err);
         if(IsMatch){
         return(null,user);
+        
       }else{
         return done(null,false,{message:'Invalid Password'});
       }

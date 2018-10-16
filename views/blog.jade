@@ -1,0 +1,360 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    title HTML Template
+    // Google font
+    link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round', rel='stylesheet')
+    // Bootstrap
+    link(type='text/css', rel='stylesheet', href='/css/bootstrap.min.css')
+    // Owl Carousel
+    link(type='text/css', rel='stylesheet', href='/css/owl.carousel.css')
+    link(type='text/css', rel='stylesheet', href='/css/owl.theme.default.css')
+    // Magnific Popup
+    link(type='text/css', rel='stylesheet', href='/css/magnific-popup.css')
+    // Font Awesome Icon
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    // Custom stlylesheet
+    link(type='text/css', rel='stylesheet', href='/css/style.css')
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    // Header
+    header
+      // Nav
+      nav#nav.navbar
+        .container
+          .navbar-header
+            // Logo
+            .navbar-brand
+              a(href='index.html')
+                img.logo(src='/images/logo.png', alt='logo')
+            // /Logo
+            // Collapse nav button
+            .nav-collapse
+              span
+            // /Collapse nav button
+            // Main navigation
+            ul.main-nav.nav.navbar-nav.navbar-right
+              li
+                a(href='index.html#home') Home
+              li
+                a(href='index.html#about') About
+              li
+                a(href='index.html#portfolio') Portfolio
+              li
+                a(href='index.html#service') Services
+              li
+                a(href='index.html#pricing') Prices
+              li
+                a(href='index.html#team') Team
+              li.has-dropdown
+                a Blog
+                ul.dropdown
+                  li
+                    a(href='#') blog post
+              li
+                a(href='index.html#contact') Contact
+            // /Main navigation
+            // /Nav
+            // header wrapper
+            .header-wrapper.sm-padding.bg-grey
+              .container
+                h2 Blog Page
+                ul.breadcrumb
+                  li.breadcrumb-item
+                    a(href='index.html') Home
+                  li.breadcrumb-item
+                    a(href='index.html#blog') Blog
+                  li.breadcrumb-item.active Single Post
+            // /header wrapper
+            // /Header
+            // Blog
+            #blog.section.md-padding
+              // Container
+              .container
+                // Row
+                .row
+                  // Main
+                  main#main.col-md-9
+                    .blog
+                      .blog-img
+                        img.img-responsive(src='/images/blog-post.jpg', alt='')
+                      .blog-content
+                        ul.blog-meta
+                          li
+                            i.fa.fa-user
+                            | John doe
+                          li
+                            i.fa.fa-clock-o
+                            | 18 Oct
+                          li
+                            i.fa.fa-comments
+                            | 57
+                        h3 Morbi mattis felis at nunc. Duis viverra
+                        p
+                          | Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+                      // blog tags
+                      .blog-tags
+                        h5 Tags :
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Web
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Design
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Marketing
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Development
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Branding
+                        a(href='#')
+                          i.fa.fa-tag
+                          | Photography
+                      // blog tags
+                      // blog author
+                      .blog-author
+                        .media
+                          .media-left
+                            img.media-object(src='/images/author.jpg', alt='')
+                          .media-body
+                            .media-heading
+                              h3 Joe Doe
+                              .author-social
+                                a(href='#')
+                                  i.fa.fa-facebook
+                                a(href='#')
+                                  i.fa.fa-twitter
+                                a(href='#')
+                                  i.fa.fa-google-plus
+                                a(href='#')
+                                  i.fa.fa-instagram
+                            p
+                              | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                      // /blog author
+                      // blog comments
+                      .blog-comments
+                        h3.title (13) Comments
+                        // comment
+                        .media
+                          .media-left
+                            img.media-object(src='/images/perso2.jpg', alt='')
+                          .media-body
+                            h4.media-heading
+                              | Joe Doe
+                              span.time 2 min ago
+                              a.reply(href='#')
+                                | Reply 
+                                i.fa.fa-reply
+                            p
+                              | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                        // /comment
+                        // comment
+                        .media
+                          .media-left
+                            img.media-object(src='/images/perso1.jpg', alt='')
+                          .media-body
+                            h4.media-heading
+                              | Joe Doe
+                              span.time 2 min ago
+                              a.reply(href='#')
+                                | Reply 
+                                i.fa.fa-reply
+                            p
+                              | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                          // author reply comment
+                          .media.author
+                            .media-left
+                              img.media-object(src='/images/perso2.jpg', alt='')
+                            .media-body
+                              h4.media-heading
+                                | Joe Doe
+                                span.time 2 min ago
+                                a.reply(href='#')
+                                  | Reply 
+                                  i.fa.fa-reply
+                              p
+                                | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                          // /comment
+                          // reply comment
+                          .media
+                            .media-left
+                              img.media-object(src='/images/perso2.jpg', alt='')
+                            .media-body
+                              h4.media-heading
+                                | Joe Doe
+                                span.time 2 min ago
+                                a.reply(href='#')
+                                  | Reply 
+                                  i.fa.fa-reply
+                              p
+                                | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                          // /comment
+                          // /comment
+                          // comment
+                          .media
+                            .media-left
+                              img.media-object(src='/images/perso.jpg', alt='')
+                            .media-body
+                              h4.media-heading
+                                | Joe Doe
+                                span.time 2 min ago
+                                a.reply(href='#')
+                                  | Reply 
+                                  i.fa.fa-reply
+                              p
+                                | Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.
+                          // /comment
+                          // /blog comments
+                          // reply form
+                          .reply-form
+                            h3.title Leave a reply
+                            form
+                              input.input(type='text', placeholder='Name')
+                              input.input(type='email', placeholder='Email')
+                              textarea(placeholder='Add Your Commment')
+                              button.main-btn(type='submit') Submit
+                          // /reply form
+                          // /Main
+                          // Aside
+                          aside#aside.col-md-3
+                            // Search
+                            .widget
+                              .widget-search
+                                input.search-input(type='text', placeholder='search')
+                                button.search-btn(type='button')
+                                  i.fa.fa-search
+                            // /Search
+                            // Category
+                            .widget
+                              h3.title Category
+                              .widget-category
+                                a(href='#')
+                                  | Web Design
+                                  span (7)
+                                a(href='#')
+                                  | Marketing
+                                  span (142)
+                                a(href='#')
+                                  | Web Development
+                                  span (74)
+                                a(href='#')
+                                  | Branding
+                                  span (60)
+                                a(href='#')
+                                  | Photography
+                                  span (5)
+                            // /Category
+                            // Posts sidebar
+                            .widget
+                              h3.title Populare Posts
+                              // single post
+                              .widget-post
+                                a(href='#')
+                                  img(src='/images/post1.jpg', alt='')
+                                  |  Blog title goes here
+                                ul.blog-meta
+                                  li Oct 18, 2017
+                              // /single post
+                              // single post
+                              .widget-post
+                                a(href='#')
+                                  img(src='/images/post2.jpg', alt='')
+                                  |  Blog title goes here
+                                ul.blog-meta
+                                  li Oct 18, 2017
+                              // /single post
+                              // single post
+                              .widget-post
+                                a(href='#')
+                                  img(src='/images/post3.jpg', alt='')
+                                  |  Blog title goes here
+                                ul.blog-meta
+                                  li Oct 18, 2017
+                              // /single post
+                              // /Posts sidebar
+                              // Tags
+                              .widget
+                                h3.title Tags
+                                .widget-tags
+                                  a(href='#') Web
+                                  a(href='#') Design
+                                  a(href='#') Graphic
+                                  a(href='#') Marketing
+                                  a(href='#') Development
+                                  a(href='#') Branding
+                                  a(href='#') Photography
+                              // /Tags
+                              // /Aside
+                              // /Row
+                              // /Container
+                              // /Blog
+                              // Footer
+                              footer#footer.sm-padding.bg-dark
+                                // Container
+                                .container
+                                  // Row
+                                  .row
+                                    .col-md-12
+                                      // footer logo
+                                      .footer-logo
+                                        a(href='index.html')
+                                          img(src='images/logo-alt.png', alt='logo')
+                                      // /footer logo
+                                      // footer follow
+                                      ul.footer-follow
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-facebook
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-twitter
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-google-plus
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-instagram
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-linkedin
+                                        li
+                                          a(href='#')
+                                            i.fa.fa-youtube
+                                      // /footer follow
+                                      // footer copyright
+                                      .footer-copyright
+                                        p
+                                          | Copyright © 2017. All Rights Reserved. Designed by 
+                                          a(href='https://colorlib.com', target='_blank') Colorlib
+                                      // /footer copyright
+                                      // /Row
+                                      // /Container
+                                      // /Footer
+                                      // Back to top
+                                      #back-to-top
+                                      // /Back to top
+                                      // Preloader
+                                      #preloader
+                                        .preloader
+                                          span
+                                          span
+                                          span
+                                          span
+                                      // /Preloader
+                                      // jQuery Plugins
+                                      script(type='text/javascript', src='/js/jquery.min.js')
+                                      script(type='text/javascript', src='/js/bootstrap.min.js')
+                                      script(type='text/javascript', src='/js/owl.carousel.min.js')
+                                      script(type='text/javascript', src='/js/jquery.magnific-popup.js')
+                                      script(type='text/javascript', src='/js/main.js')

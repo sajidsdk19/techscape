@@ -25,6 +25,10 @@ router.get('/login', function(req, res, next) {
 });
 
 
+router.get('/blog',function(req,res,next){
+res.render('blog');
+});
+
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
@@ -106,24 +110,44 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
 
 
 
+// router.post('/login',function(req, res) {
+
+//     // var username=req.body.username;
+//     // var password=req.body.pass;
+//      console.log(req.body.username);
+//      console.log(req.body.pass);
+//      //console.log(req);
+
+//     //If this function gets called, authentication was successful.
+//     //req.user` contains the authenticated user.
+//     //req.flash('you are now logged in ');
+//     //res.redirect('/');
+//   });
+
+
+
+
+// router.post('/login', function(req, res) {
+//   // req.checkBody('email', 'Invalid email address').isEmail();
+//   // req.checkBody('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
+//     console.log("function called");
+//      console.log(req.body.username);
+//      console.log(req.body.pass);
+// //   res.redirect('/');
+// });
+
+
+
 router.post('/login',
-passport.authenticate('local',{failureRedirect:'users/login',failureFlash:'Invalid username or Password',failureFlash:true}),
+passport.authenticate('local'),
 function(req, res) {
 
-    var username=req.body.username;
-    var password=req.body.pass;
-     console.log(req.body.username);
-     console.log(req.body.pass);
+console.log(req.body.username);
+console.log(req.body.pass);  
+//req.flash('success','you are now logged in ');
+//res.redirect('/');
 
-    //If this function gets called, authentication was successful.
-    //req.user` contains the authenticated user.
-    //req.flash('you are now logged in ');
-    //res.redirect('/');
-  });
-
-
-
-
+});
 
 
 
@@ -137,48 +161,26 @@ function(req, res) {
     });
   });
 
-  passport.use(new LocalStratgegy(function(username,password,done){
+ 
 
-     User.GetUserByUsername(username,function(err,user){
+passport.use(new LocalStratgegy(function(username,password,done){
+
+  User.GetUserByUsername(username,function(err,user){
       if(err) throw err;
-        //console.log(err);
       if(!user){
         return done(null,false,{message:'Unknown user '});
       } 
       
+
       User.ComparePassword(password,user.password,function(err,IsMatch){
         if(err) return done(err);
         if(IsMatch){
-        return(null,user);
-        
-      }else{
+        return done(null,user);
+         }else{
         return done(null,false,{message:'Invalid Password'});
       }
       });
      });
   }));
-
-
-
-
-
-  
-
-
-// router.post('/register', function(req, res, next) {
-//   req.checkBody('email', 'Invalid email address').isEmail();
-//   req.checkBody('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
-
-//   var errors = req.validationErrors();
-//   if (errors) {
-//     req.session.errors = errors;
-//     req.session.success = false;
-//   } else {
-//     req.session.success = true;
-//   }
-// //   res.redirect('/');
-// });
-
-
 
 module.exports = router;

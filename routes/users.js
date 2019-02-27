@@ -16,21 +16,15 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
+router.get('/platform', function(req, res, next) {
+  res.render('platform');
+});
+
 
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
-
-
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
-
-
-
-
-
 
 router.post('/signup',upload.single('profileimg'), function(req, res, next) {
  //res.redirect('/signup');
@@ -99,9 +93,8 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
   
    });
  
-   res.location('/');
-   res.redirect('/');
-  
+   res.location('/users/platform');
+   res.redirect('/users/platform');  
 
   }
 
@@ -151,7 +144,7 @@ router.post('/login', function(req, res, next) {
    console.log(req.body.username);
    console.log(req.body.pass);
 
-
+ 
   //  expressValidator.req.checkBody("username","User Name is Required").notEmpty();
   //  var errors =req.validationErrors();
 

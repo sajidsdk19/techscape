@@ -1,11 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var expressValidator=require('express-validator');
-
+var passport=require('passport');
+var LocalStratgegy=require('passport-local').Strategy
 router.use(expressValidator());
+
 var multer=require('multer');
 var upload=multer({dest:'./uploads'});
 var Users=require('../model/users');
+var flash=require('connect-flash');
+
+
+router.use(flash());
+
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -21,10 +29,15 @@ router.get('/platform', function(req, res, next) {
 });
 
 
+router.get('/blog',function(req,res,next){
+res.render('blog');
+});
+
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
+
 
 router.post('/signup',upload.single('profileimg'), function(req, res, next) {
  //res.redirect('/signup');
@@ -47,12 +60,12 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
     console.log("uploading file ");
     var image = req.file.filename;
   } else {
-    console.log("NO files uploaded ");
+    console.log("No files uploaded ");
   }
 
   //Validators
   req.checkBody('name','Name is Required').notEmpty();
-  req.checkBody('username', 'User Name is Required').notEmpty();
+  req.checkBody('username','User Name is Required').notEmpty();
   req.checkBody('email', 'Email is not valid').isEmail();
   req.checkBody('password', 'Password field is required').notEmpty();
   req.checkBody('password2', 'Password do not match').equals(req.body.password);
@@ -69,11 +82,9 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
       message: "Please Make Sure you typed correctly",
       validations: validationMessages
     });
-    console.log("Errors");
+    console.log("Failed to store in DB ");
   } else {
-    console.log("success");
-
-    
+    console.log("successfully entered into Db");
   //Saving Users in database s=================
   var newUser= new Users({
     username:username,
@@ -93,73 +104,87 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
   
    });
  
-   res.location('/users/platform');
-   res.redirect('/users/platform');  
+   res.location('/');
+   res.redirect('/');
 
   }
+});
 
+
+
+
+
+// router.post('/login',function(req, res) {
+
+//     // var username=req.body.username;
+//     // var password=req.body.pass;
+//      console.log(req.body.username);
+//      console.log(req.body.pass);
+//      //console.log(req);
+
+//     //If this function gets called, authentication was successful.
+//     //req.user` contains the authenticated user.
+//     //req.flash('you are now logged in ');
+//     //res.redirect('/');
+//   });
+
+
+
+
+// router.post('/login', function(req, res) {
+//   // req.checkBody('email', 'Invalid email address').isEmail();
+//   // req.checkBody('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
+//     console.log("function called");
+//      console.log(req.body.username);
+//      console.log(req.body.pass);
+// //   res.redirect('/');
+// });
+
+
+
+router.post('/login',
+passport.authenticate('local'),
+function(req, res) {
+
+console.log(req.body.username);
+console.log(req.body.pass);  
+//req.flash('success','you are now logged in ');
+//res.redirect('/');
+
+});
+
+
+
+  passport.sserializeUser(function(user, done) {
+    done(null, user.id);
+  });
+  
+  passport.deserializeUser(function(id, done) {
+    User.GetUserByID(id, function(err, user) {
+      done(err, user);
+    });
+  });
 
  
 
-});
+passport.use(new LocalStratgegy(function(username,password,done){
 
+  User.GetUserByUsername(username,function(err,user){
+      if(err) throw err;
+      if(!user){
+        return done(null,false,{message:'Unknown user '});
+      } 
+      
 
-
-
-
-
-
-router.post('/register', function(req, res, next) {
-  req.checkBody('email', 'Invalid email address').isEmail();
-  req.checkBody('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
-
-  var errors = req.validationErrors();
-  if (errors) {
-    req.session.errors = errors;
-    req.session.success = false;
-  } else {
-    req.session.success = true;
-  }
-  res.redirect('/');
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-router.post('/login', function(req, res, next) {
-
-  var username=req.body.username;
-  var password=req.body.pass;
-   console.log(req.body.username);
-   console.log(req.body.pass);
-
- 
-  //  expressValidator.req.checkBody("username","User Name is Required").notEmpty();
-  //  var errors =req.validationErrors();
-
-  //  if(errors)
-  //  {
-  //    res.render('signin',{
-  //      errors: errors
-  //    });
-  //  //console.log("Errors");
-  //  }else{
-  //    console.log("success");
-  //  }
-   
-});
-
-
+      User.ComparePassword(password,user.password,function(err,IsMatch){
+        if(err) return done(err);
+        if(IsMatch){
+        return done(null,user);
+         }else{
+        return done(null,false,{message:'Invalid Password'});
+      }
+      });
+     });
+  }));
 
 module.exports = router;

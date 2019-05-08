@@ -6,8 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'TechScape' });
 });
 
-// router.get('/platform', function(req, res, next) {
-//   res.render('platform');
-// });
+router.get('/platform', function(req, res, next) {
+   res.render('platform');
+ });
 
 module.exports = router;

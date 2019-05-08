@@ -114,23 +114,16 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
 
 
 
-// router.post('/login',function(req, res) {
+router.post('/login',function(req, res) {
 
-//     // var username=req.body.username;
-//     // var password=req.body.pass;
-//      console.log(req.body.username);
-//      console.log(req.body.pass);
-//      //console.log(req);
-
-//     //If this function gets called, authentication was successful.
-//     //req.user` contains the authenticated user.
-//     //req.flash('you are now logged in ');
-//     //res.redirect('/');
-//   });
+      var username=req.body.username;
+      var password=req.body.pass;
+      res.redirect('/platform');
+});
 
 
 
-
+/*
 // router.post('/login', function(req, res) {
 //   // req.checkBody('email', 'Invalid email address').isEmail();
 //   // req.checkBody('password', 'Password is invalid').isLength({min: 4}).equals(req.body.confirmPassword);
@@ -141,50 +134,51 @@ router.post('/signup',upload.single('profileimg'), function(req, res, next) {
 // });
 
 
-
+*/
+/*
 router.post('/login',
 passport.authenticate('local'),
 function(req, res) {
 
-console.log(req.body.username);
-console.log(req.body.pass);  
-//req.flash('success','you are now logged in ');
-//res.redirect('/');
+  console.log(req.body.username);
+  console.log(req.body.pass);  
+  req.flash('success','you are now logged in ');
+  res.redirect('/platform');
 
 });
 
 
 
-  passport.serializeUser(function(user, done) {
-    done(null, user.id);
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.GetUserByID(id, function(err, user) {
+    done(err, user);
   });
-  
-  passport.deserializeUser(function(id, done) {
-    User.GetUserByID(id, function(err, user) {
-      done(err, user);
-    });
-  });
+});
 
  
 
 passport.use(new LocalStratgegy(function(username,password,done){
 
-  User.GetUserByUsername(username,function(err,user){
-      if(err) throw err;
-      if(!user){
-        return done(null,false,{message:'Unknown user '});
-      } 
-      
+User.GetUserByUsername(username,function(err,user){
+    if(err) throw err;
+    if(!user){
+      return done(null,false,{message:'Unknown user '});
+    } 
+    
 
-      User.ComparePassword(password,user.password,function(err,IsMatch){
-        if(err) return done(err);
-        if(IsMatch){
-        return done(null,user);
-         }else{
-        return done(null,false,{message:'Invalid Password'});
-      }
-      });
-     });
-  }));
-
+    User.ComparePassword(password,user.password,function(err,IsMatch){
+      if(err) return done(err);
+      if(IsMatch){
+      return done(null,user);
+        }else{
+      return done(null,false,{message:'Invalid Password'});
+    }
+    });
+    });
+}));
+*/
 module.exports = router;

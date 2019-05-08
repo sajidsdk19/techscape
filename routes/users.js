@@ -155,7 +155,7 @@ console.log(req.body.pass);
 
 
 
-  passport.sserializeUser(function(user, done) {
+  passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
   
